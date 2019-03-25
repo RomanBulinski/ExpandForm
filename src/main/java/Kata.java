@@ -7,14 +7,17 @@ public class Kata {
         String result = "";
 
         for( int i =0; i<number.length(); i++ ){
-            result = result + numbers[i];
-            for(int j=i+1; j<number.length(); j++  ){
-                result = result + "0";
+            if(numbers[i] != '0'){
+                result = result + numbers[i];
+                for(int j=i+1; j<number.length(); j++  ){
+                    result = result + "0";
+                }
+                result = result + " + ";
+            }else{
+                continue;
             }
-            result = result + " + ";
         }
-
-        return result.substring(0,result.length()-2);
+        return result.substring(0,result.length()-3);
 
     }
 
